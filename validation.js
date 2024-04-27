@@ -4,6 +4,7 @@ const fullname = document.getElementById('fullname');
 const mobilenumber = document.getElementById('mobilenumber');
 const email = document.getElementById('email');
 const subject = document.getElementById('subject');
+const subjectline = document.getElementById('subjectline');
 form.addEventListener('submit', e=>{
     e.preventDefault();
     
@@ -97,8 +98,10 @@ else {
                 setSuccess(subject);
                 subjectCheck = true ;
             }
-            
+           
         if(subjectCheck === true && mobilenumberCheck === true && fullnameCheck === true && emailCheck === true ){
+     
+            subjectline.setAttribute("value",`${fullnameValue} Wanted to connect with us through HealCanada website`);
             
             const formData = new FormData(form);
             const object = Object.fromEntries(formData);
